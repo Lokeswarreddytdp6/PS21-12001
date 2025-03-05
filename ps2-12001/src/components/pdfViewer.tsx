@@ -18,7 +18,7 @@ export default function PdfViewer(){
         <div className="p-4">
             <input type="file" accept="application.pdf" onChange={handleFileChange}/>
             {pdfFile&&(
-                <div className="mt-4 rotate-90">
+                <div className="mt-4">
                     <Worker workerUrl={`https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`}>
                         <Viewer fileUrl={pdfFile} />
                     </Worker>

@@ -1,10 +1,39 @@
 import Link from "next/link";
-export default function Navbar(){
-    return(
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuIndicator,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+
+
+export default function Navbar() {
+    return (
         <>
-            <Link href='/'>Home</Link>
-            <br />
-            <Link href='/upload'>upload</Link>
+            <NavigationMenu>
+                <NavigationMenuList>
+                    <NavigationMenuItem>
+                        <Link href="/" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Home
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href="/upload" legacyBehavior passHref>
+                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                Upload files
+                            </NavigationMenuLink>
+                        </Link>
+                   </NavigationMenuItem>
+                </NavigationMenuList>
+            </NavigationMenu>
+
         </>
     )
 }
